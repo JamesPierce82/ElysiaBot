@@ -25,6 +25,8 @@ const token = settings.token;
 
 // declare variables tied to messaging features
 var zakMsg = 0;
+var zakOldMsg = 0;
+var zakTimeout = 0;
 var danMsg = 0;
 var danOldMsg = 0;
 var danTimeout = 0;
@@ -35,19 +37,31 @@ client.on('message', message => {
   if (message.content === '!ping') {
     // Send "pong" to the same channel
     message.channel.send('pong');
+      // Zak Logic
+  } else if(message.content('!roll')){
+        var rollStringArray = message.content.split(" ");
+        var rollString = rollStringArray[1];
+      
+        var diceArray = rollString.split("+");
+        rollDice(message, diceArray);
+    
   } else if(message.author.id === '278317411441180672') {
-	zakMsg++;
-	if(zakMsg == 1){
-		// Send "fenton" when Zak sens messages
-		message.channel.send('FENTON!');
-	} else if(zakMsg == 5){
-		zakMsg = 0;
+      if(zakMsg == 0){
+		zakMsg = message.createdTimestamp;
+	} else{
+		zakOldMsg = zakMsg;
+		zakMsg = message.createdTimestamp;
+		zakTimeout = zakMsg - zakOldMsg;
+		if(zakTimeout > 900000){
+			message.channel.send("FENTON!");
+		}
 	}
+      // Dan Logic
   } else if (message.author.id === '237788874271752192') {
 	if(danMsg == 0){
 		danMsg = message.createdTimestamp;
 	} else{
-		danOldMsg = jamesMsg;
+		danOldMsg = danMsg;
 		danMsg = message.createdTimestamp;
 		danTimeout = danMsg - danOldMsg;
 		if(danTimeout > 14400000){
@@ -56,6 +70,11 @@ client.on('message', message => {
 	}
   }
 });
+
+function diceArray(var message, var diceArray){
+    
+message.channel.send("Successfully entered the diceArray method!");
+}
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login(token);
