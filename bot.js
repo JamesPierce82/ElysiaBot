@@ -71,10 +71,10 @@ client.on('message', message => {
   }
 });
 
-/*function diceArray(var message, var diceArray){
+function diceArray(message, diceArray){
     
 message.channel.send("Successfully entered the diceArray method!");
-}*/
+}
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login(token);
