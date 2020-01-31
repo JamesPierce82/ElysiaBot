@@ -38,7 +38,7 @@ client.on('message', message => {
     // Send "pong" to the same channel
     message.channel.send('pong');
       // Zak Logic
-  } else if(message.content('!roll')){
+  } else if(message.content === '!roll'){
         var rollStringArray = message.content.split(" ");
         var rollString = rollStringArray[1];
       
