@@ -38,14 +38,14 @@ client.on('message', message => {
     // Send "pong" to the same channel
     message.channel.send('pong');
       // Zak Logic
-  } else if(message.content === '!roll'){
+  }/* else if(message.content === '!roll'){
         var rollStringArray = message.content.split(" ");
         var rollString = rollStringArray[1];
       
         var diceArray = rollString.split("+");
         rollDice(message, diceArray);
     
-  } else if(message.author.id === '278317411441180672') {
+  }*/ else if(message.author.id === '278317411441180672') {
       if(zakMsg == 0){
 		zakMsg = message.createdTimestamp;
 	} else{
@@ -71,10 +71,10 @@ client.on('message', message => {
   }
 });
 
-function diceArray(var message, var diceArray){
+/*function diceArray(var message, var diceArray){
     
 message.channel.send("Successfully entered the diceArray method!");
-}
+}*/
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login(token);
