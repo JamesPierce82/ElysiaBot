@@ -9,6 +9,12 @@ const Discord = require('discord.js');
 // Create an instance of a Discord client
 const client = new Discord.Client();
 
+
+function diceArray(message, diceArray){
+    
+    message.channel.send("Successfully entered the diceArray method!");
+}
+
 /**
  * The ready event is vital, it means that only _after_ this will your bot start reacting to information
  * received from Discord
@@ -71,10 +77,6 @@ client.on('message', message => {
   }
 });
 
-function diceArray(message, diceArray){
-    
-message.channel.send("Successfully entered the diceArray method!");
-}
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login(token);
