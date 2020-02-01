@@ -74,6 +74,19 @@ client.on('message', message => {
 			message.channel.send("Ugh, This guy? I'm Leaving...");
 		}
 	}
+  } else if(message.content === '!dan'){
+      message.channel.send("danMsg - " + danMsg);
+      message.channel.send("danOldMsg - " + danOldMsg);
+      message.channel.send("danTimeout - " + danTimeout);
+  } else if(message.content === '!zak'){
+      message.channel.send("zakMsg - " + zakMsg);
+      message.channel.send("zakOldMsg - " + zakOldMsg);
+      message.channel.send("zakTimeout - " + zakTimeout);
+  } else if(message.content === '!help'){
+        message.channel.send("Command List
+                             \n
+                             \n!help - Lists all commands
+                             \n!roll - Rolls Dice(WIP)");
   }
 });
 
