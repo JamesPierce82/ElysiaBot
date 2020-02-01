@@ -83,10 +83,7 @@ client.on('message', message => {
       message.channel.send("zakOldMsg - " + zakOldMsg);
       message.channel.send("zakTimeout - " + zakTimeout);
   } else if(message.content === '!help'){
-        message.channel.send("Command List
-                             \n
-                             \n!help - Lists all commands
-                             \n!roll - Rolls Dice(WIP)");
+        message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice(WIP)");
   }
 });
 
