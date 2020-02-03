@@ -15,8 +15,9 @@ function roll(message, rollString){
     var tempRoll = 0;
     var totalRoll = 0;
     
+    var preRoll = message.content.split(" ");
     // cup represents the pool of dice being rolled, as in rolling a cup of Dice in Yahtzee
-    var cup = message.content.split("+");
+    var cup = preRoll[1].split("+");
     
     
     
