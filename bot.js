@@ -16,8 +16,8 @@ function roll(message, rollString){
     var totalRoll = 0;
     
     // cup represents the pool of dice being rolled, as in rolling a cup of Dice in Yahtzee
-    var cup = message.content.split("+");
-    message.channel.send("entered function + " + cup.size);
+    var cup = message.content;
+    message.channel.send("entered function + " + cup);
     
     
     /*for(var i = 0; i < cup.size; i++){
