@@ -21,9 +21,10 @@ function roll(message, rollString){
     
     
     for(var i = 0; i < cup.length; i++){
+        message.channel.send("dice set: " + cup[i]);
         var dice = cup[i].split("d");
         for(var j = 0; j < dice[0];j++){
-             
+             message.channel.send("rolling : " + dice[0] + "d" + dice[1]);
             tempRoll = Math.floor(Math.random() * dice[1]);
             message.channel.send("you rolled a " + tempRoll);
             if(j == 0 && i == 0){
