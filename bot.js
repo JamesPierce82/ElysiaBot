@@ -10,7 +10,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
-function roll(message){
+function roll(message, rollString){
     
     message.channel.send("Successfully entered the roll method!");
 }
@@ -57,7 +57,7 @@ client.on('message', message => {
       
         message.channel.send("incoming data - " + rollString);
       
-        roll(rollString);
+        roll(message, rollString);
       
         /*var diceArray = rollString.split("+");
         rollDice(message, diceArray);*/
