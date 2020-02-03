@@ -16,7 +16,7 @@ function roll(message, rollString){
     var totalRoll = 0;
     
     // cup represents the pool of dice being rolled, as in rolling a cup of Dice in Yahtzee
-    var cup = message.split("+");
+    //var cup = message.split("+");
     /*for(var i = 0; i < cup.size; i++){
         var dice = cup[i].split("d");
         for(var j = 0; j < dice[0];j++){
@@ -78,7 +78,7 @@ client.on('message', message => {
       
         message.channel.send("incoming data - " + rollString);
       
-        //roll(message, rollString);
+        roll(message, rollString);
       
         /*var diceArray = rollString.split("+");
         rollDice(message, diceArray);*/
