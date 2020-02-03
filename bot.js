@@ -18,8 +18,8 @@ function roll(message, rollString){
     
     // cup represents the pool of dice being rolled, as in rolling a cup of Dice in Yahtzee
     var cup = message.split("+");
-    for(var i = 0; i < cup.size; i++){
-        /*var dice = cup[i].split("d");
+    /*for(var i = 0; i < cup.size; i++){
+        var dice = cup[i].split("d");
         for(var j = 0; j < dice[0];j++){
             tempRoll = Math.floor(Math.random() * dice[1]);
             if(j == 0){
@@ -28,8 +28,8 @@ function roll(message, rollString){
                 output .= "+(" + tempRoll + ")";
             }
             totalRoll += tempRoll;
-        }*/
-    }
+        }
+    }*/
     
     
     
