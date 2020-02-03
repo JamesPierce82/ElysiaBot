@@ -10,9 +10,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
-function diceArray(message, diceArray){
+function roll(message){
     
-    message.channel.send("Successfully entered the diceArray method!");
+    message.channel.send("Successfully entered the roll method!");
 }
 
 /**
@@ -48,10 +48,15 @@ client.on('message', message => {
         var rollStringArray = message.content.split(" ");
         var rollString = rollStringArray[1];
       
-        var diceArray = rollString.split("+");
-        rollDice(message, diceArray);
+        message.channel.send("incoming data - " + rollString);
+      
+        roll(rollString);
+      
+        /*var diceArray = rollString.split("+");
+        rollDice(message, diceArray);*/
+      
     
-  } else if(message.author.id === '278317411441180672') {
+  }/* else if(message.author.id === '278317411441180672') {
       if(zakMsg == 0){
 		zakMsg = message.createdTimestamp;
 	} else{
@@ -82,7 +87,7 @@ client.on('message', message => {
       message.channel.send("zakMsg - " + zakMsg);
       message.channel.send("zakOldMsg - " + zakOldMsg);
       message.channel.send("zakTimeout - " + zakTimeout);
-  } else if(message.content === '!help'){
+  }*/ else if(message.content === '!help'){
         message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice(WIP)");
   }
 });
