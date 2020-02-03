@@ -12,7 +12,28 @@ const client = new Discord.Client();
 
 function roll(message, rollString){
     
-    message.channel.send("Successfully entered the roll method!");
+    var output = "";
+    var tempRoll = 0;
+    var totalRoll = 0;
+    
+    // cup represents the pool of dice being rolled, as in rolling a cup of Dice in Yahtzee
+    var cup = message.split("+");
+    for(var i = 0; i < cup.size; i++){
+        var dice = cup[i].split("d");
+        for(var j = 0; j < dice[0];j++){
+            tempRoll = Math.floor(Math.random() * dice[1]);
+            if(j == 0){
+                output .= "(" + tempRoll + ")";
+            } else {
+                output .= "+(" + tempRoll + ")";
+            }
+            totalRoll += tempRoll;
+        }
+    }
+    
+    
+    
+    message.channel.send("You rolled : " + output + " which is equal to : " + totalRoll);
 }
 
 /**
