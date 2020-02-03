@@ -90,7 +90,7 @@ client.on('message', message => {
 		zakOldMsg = zakMsg;
 		zakMsg = message.createdTimestamp;
 		zakTimeout = zakMsg - zakOldMsg;
-		if(zakTimeout > 900000){
+		if(zakTimeout > 1100000){
 			message.channel.send("FENTON!");
 		}
 	}
@@ -115,7 +115,7 @@ client.on('message', message => {
       message.channel.send("zakOldMsg - " + zakOldMsg);
       message.channel.send("zakTimeout - " + zakTimeout);
   } else if(message.content === '!help'){
-        message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice(WIP)");
+        message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20");
   }
 });
 
