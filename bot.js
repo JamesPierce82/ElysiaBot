@@ -21,7 +21,7 @@ function roll(message, rollString){
     
     
     for(var i = 0; i < cup.length; i++){
-        var dice = cup[i].split("d");
+        //var dice = cup[i].split("d");
         /*for(var j = 0; j < dice[0];j++){
             tempRoll = Math.floor(Math.random() * dice[1]);
             if(j == 0){
@@ -35,7 +35,7 @@ function roll(message, rollString){
     
     
     
-    message.channel.send("You rolled : " + output + " which is equal to : " + totalRoll);
+    message.channel.send("You rolled : " + cup.length + " which is equal to : " + totalRoll);
     
 }
 
