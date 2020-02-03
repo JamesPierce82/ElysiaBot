@@ -21,6 +21,13 @@ function roll(message){
  */
 client.on('ready', () => {
   console.log('I am ready!');
+    // Notify users on server of Bot Connect
+    let debugChannel = client.guilds
+        .find(x => x.name === 'DiegoAtravesar').channels
+        .find(x => x.name === 'bot-log');
+    
+    debugChannel.send("Bot has Connected!");
+
 });
 
 // Import all settings from the conf.js file
