@@ -21,8 +21,8 @@ function roll(message, rollString){
     
     
     for(var i = 0; i < cup.length; i++){
-        /*var dice = cup[i].split("d");
-        for(var j = 0; j < dice[0];j++){
+        var dice = cup[i].split("d");
+        /*for(var j = 0; j < dice[0];j++){
             tempRoll = Math.floor(Math.random() * dice[1]);
             if(j == 0){
                 output .= "(" + tempRoll + ")";
