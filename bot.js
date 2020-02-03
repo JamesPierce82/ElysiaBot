@@ -11,14 +11,12 @@ const client = new Discord.Client();
 
 
 function roll(message, rollString){
-    
     var output = "";
     var tempRoll = 0;
     var totalRoll = 0;
     
     // cup represents the pool of dice being rolled, as in rolling a cup of Dice in Yahtzee
-    var str = "How are you doing today?";
-var res = str.split("+");
+    var cup = message.split("+");
     /*for(var i = 0; i < cup.size; i++){
         var dice = cup[i].split("d");
         for(var j = 0; j < dice[0];j++){
@@ -80,7 +78,7 @@ client.on('message', message => {
       
         message.channel.send("incoming data - " + rollString);
       
-        roll(message, rollString);
+        //roll(message, rollString);
       
         /*var diceArray = rollString.split("+");
         rollDice(message, diceArray);*/
