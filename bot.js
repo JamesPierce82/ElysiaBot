@@ -119,7 +119,8 @@ client.on('message', message => {
   }else if (message.content.startsWith("!request")){
       //var request = message.substr(0, 2);      
       //debugChannel.send("Request: - ");
-      debugChannel.send("Bot is responding!");
+      message.channel.send("test");
+      //debugChannel.send("Bot is responding!");
   }
 });
 
