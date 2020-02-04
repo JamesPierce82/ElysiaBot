@@ -55,10 +55,6 @@ client.on('ready', () => {
 
 });
 
-let debugChannel = client.guilds
-        .find(x => x.name === 'DiegoAtravesar').channels
-        .find(x => x.name === 'bot-log');
-
 // Import all settings from the conf.js file
 let settings = require('./conf.js');
 
@@ -122,7 +118,8 @@ client.on('message', message => {
         message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20");
   }else if (message.content.startsWith("!request")){
       //var request = message.substr(0, 2);      
-      debugChannel.send("Request: - ");
+      //debugChannel.send("Request: - ");
+      debugChannel.send("Bot is responding!");
   }
 });
 
