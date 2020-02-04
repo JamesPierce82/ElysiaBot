@@ -55,6 +55,10 @@ client.on('ready', () => {
 
 });
 
+let debugChannel = client.guilds
+        .find(x => x.name === 'DiegoAtravesar').channels
+        .find(x => x.name === 'bot-log');
+
 // Import all settings from the conf.js file
 let settings = require('./conf.js');
 
