@@ -119,6 +119,9 @@ client.on('message', message => {
   }else if (message.content.startsWith("!request")){
       //var request = message.substr(0, 2);      
       //debugChannel.send("Request: - ");
+      let debugChannel = client.guilds
+        .find(x => x.name === 'DiegoAtravesar').channels
+        .find(x => x.name === 'bot-log');
       message.channel.send("test" + debugChannel);
       //debugChannel.send("Bot is responding!");
   }
