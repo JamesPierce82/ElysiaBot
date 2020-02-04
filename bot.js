@@ -122,7 +122,7 @@ client.on('message', message => {
   } else if(message.content === '!help'){
         message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20");
   }else if (message.content.startsWith("!request")){
-      var request = message.content.substr(0, 5;      
+      var request = message.content.substr(0, 5);      
       debugChannel.send("Request: - " + request);
   }
 });
