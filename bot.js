@@ -124,10 +124,10 @@ client.on('message', message => {
       message.channel.send("zakOldMsg - " + zakOldMsg);
       message.channel.send("zakTimeout - " + zakTimeout);
   } else if(message.content === '!help'){
-        message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20");
+        message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20\n!request - Type up any feature requests for the bot");
   }else if (message.content.startsWith("!request")){
       var request = message.content.substr(9, (message.content.length)-1);      
-      requestsChannel.send("Request: - " + request);
+      requestsChannel.send("Request: " + request);
   }
 });
 
