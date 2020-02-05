@@ -142,6 +142,9 @@ client.on('message', message => {
       var request = message.content.substr(9, (message.content.length)-1);      
       requestsChannel.send("Request: " + request);
       message.channel.send("Your request has been logged. Thank You!");
+  } else if (message.content.toLowerCase().includes("hey robi") && message.content.toLowerCase().includes("weather")){
+    message.channel.send("Looks like showers. Boy do I need one.");
+    message.channel.send("I promise I'll get smarter soon and have better comebacks. This is the only thing I can think of currently.");
   }
 });
 
