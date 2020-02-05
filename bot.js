@@ -76,6 +76,10 @@ client.on('message', message => {
         .find(x => x.name === 'DiegoAtravesar').channels
         .find(x => x.name === 'bot-log');
     
+    let requestsChannel = client.guilds
+        .find(x => x.name === 'DiegoAtravesar').channels
+        .find(x => x.name === 'bot-requests');
+    
   // If the message is "ping"
   if (message.content === '!ping') {
     // Send "pong" to the same channel
@@ -123,7 +127,7 @@ client.on('message', message => {
         message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20");
   }else if (message.content.startsWith("!request")){
       var request = message.content.substr(9, (message.content.length)-1);      
-      debugChannel.send("Request: - " + request);
+      requestsChannel.send("Request: - " + request);
   }
 });
 
