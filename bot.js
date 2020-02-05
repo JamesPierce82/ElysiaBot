@@ -80,19 +80,9 @@ client.on('message', message => {
         .find(x => x.name === 'DiegoAtravesar').channels
         .find(x => x.name === 'bot-requests');
     
-  // If the message is "ping"
-  if (message.content === '!ping') {
-    // Send "pong" to the same channel
-    message.channel.send('pong');
-      // Zak Logic
-  } else if(message.content.startsWith('!roll')){
-        var rollStringArray = message.content.split(" ");
-        var rollString = rollStringArray[1];
-      
-        roll(message, rollString);
-      
     
-  } else if(message.author.id === '278317411441180672') {
+    // Timer Logic
+    if(message.author.id === '278317411441180672') {
       if(zakMsg == 0){
 		zakMsg = message.createdTimestamp;
 	} else{
@@ -115,6 +105,21 @@ client.on('message', message => {
 			message.channel.send("Ugh, This guy? I'm Leaving...");
 		}
 	}
+  }
+    
+    
+  // If the message is "ping"
+  if (message.content === '!ping') {
+    // Send "pong" to the same channel
+    message.channel.send('pong');
+      // Zak Logic
+  } else if(message.content.startsWith('!roll')){
+        var rollStringArray = message.content.split(" ");
+        var rollString = rollStringArray[1];
+      
+        roll(message, rollString);
+      
+    
   } else if(message.content === '!dan'){
       message.channel.send("danMsg - " + danMsg);
       message.channel.send("danOldMsg - " + danOldMsg);
