@@ -23,6 +23,12 @@ function roll(message, rollString){
     
     for(var i = 0; i < cup.length; i++){
         var dice = cup[i].split("d");
+        var die = 0;
+        if(!dice[0]){
+            die = 1;
+        } else {
+            die = dice[0];
+        }
         for(var j = 0; j < dice[0];j++){             
             tempRoll = Math.floor((Math.random() * dice[1])+1);
             if(j == 0 && i == 0){
@@ -52,6 +58,7 @@ client.on('ready', () => {
         .find(x => x.name === 'bot-log');
     
     debugChannel.send("Bot has Connected!");
+    
 
 });
 
@@ -131,8 +138,10 @@ client.on('message', message => {
   } else if(message.content === '!help'){
         message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20\n!request - Type up any feature requests for the bot");
   }else if (message.content.startsWith("!request")){
+      
       var request = message.content.substr(9, (message.content.length)-1);      
       requestsChannel.send("Request: " + request);
+      message.channel.send("Your request has been logged. Thank You!");
   }
 });
 
