@@ -67,7 +67,7 @@ let settings = require('./conf.js');
 
 // Declare variables from the conf.js file
 const token = settings.token;
-
+/*
 // declare variables tied to messaging features
 var zakMsg = 0;
 var zakOldMsg = 0;
@@ -75,17 +75,17 @@ var zakTimeout = 0;
 var danMsg = 0;
 var danOldMsg = 0;
 var danTimeout = 0;
-var jamesMsg = 0;
+var jamesMsg = 0;*/
 // Create an event listener for messages
 client.on('message', message => {
     
-    let debugChannel = client.guilds
+    /*let debugChannel = client.guilds
         .find(x => x.name === 'DiegoAtravesar').channels
         .find(x => x.name === 'bot-log');
     
     let requestsChannel = client.guilds
         .find(x => x.name === 'DiegoAtravesar').channels
-        .find(x => x.name === 'bot-requests');
+        .find(x => x.name === 'bot-requests');*/
     
     
     // Timer Logic
