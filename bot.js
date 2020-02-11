@@ -63,10 +63,10 @@ client.on('ready', () => {
 });
 
 // Import all settings from the conf.js file
-/*let settings = require('./conf.js');
+let settings = require('./conf.js');
 
 // Declare variables from the conf.js file
-const token = settings.token;*/
+const token = settings.token;
 /*
 // declare variables tied to messaging features
 var zakMsg = 0;
@@ -150,5 +150,4 @@ client.on('message', message => {
 
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
-var token = "NjcyNDY4MDYxNzM0OTYxMTgx.XkMdMA.UttXNbm8KOUrN_Hg7fj4b_iEaTk";
 client.login(token);
