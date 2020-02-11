@@ -1,4 +1,4 @@
-//#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * A custom bot built by James Pierce for various personal Discord Servers.
  */
@@ -10,7 +10,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
-/*function roll(message, rollString){
+function roll(message, rollString){
     var output = "";
     var tempRoll = 0;
     var totalRoll = 0;
@@ -44,7 +44,7 @@ const client = new Discord.Client();
     
     message.channel.send("You rolled : " + output + " which is equal to : " + totalRoll);
     
-}*/
+}
 
 /**
  * The ready event is vital, it means that only _after_ this will your bot start reacting to information
@@ -67,7 +67,7 @@ let settings = require('./conf.js');
 
 // Declare variables from the conf.js file
 const token = settings.token;
-/*
+
 // declare variables tied to messaging features
 var zakMsg = 0;
 var zakOldMsg = 0;
@@ -75,21 +75,21 @@ var zakTimeout = 0;
 var danMsg = 0;
 var danOldMsg = 0;
 var danTimeout = 0;
-var jamesMsg = 0;*/
+var jamesMsg = 0;
 // Create an event listener for messages
 client.on('message', message => {
     
-    /*let debugChannel = client.guilds
+    let debugChannel = client.guilds
         .find(x => x.name === 'DiegoAtravesar').channels
         .find(x => x.name === 'bot-log');
     
     let requestsChannel = client.guilds
         .find(x => x.name === 'DiegoAtravesar').channels
-        .find(x => x.name === 'bot-requests');*/
+        .find(x => x.name === 'bot-requests');
     
     
     // Timer Logic
-    /*if(message.author.id === '278317411441180672') {
+    if(message.author.id === '278317411441180672') {
       if(zakMsg == 0){
 		zakMsg = message.createdTimestamp;
 	} else{
@@ -112,11 +112,11 @@ client.on('message', message => {
 			message.channel.send("Ugh, This guy? I'm Leaving...");
 		}
 	}
-  }*/
+  }
     
     
   // If the message is "ping"
-  /*if (message.content === '!ping') {
+  if (message.content === '!ping') {
     // Send "pong" to the same channel
     message.channel.send('pong');
       // Zak Logic
@@ -145,7 +145,7 @@ client.on('message', message => {
   } else if (message.content.toLowerCase().includes("hey robi") && message.content.toLowerCase().includes("weather")){
     message.channel.send("Looks like showers. Boy do I need one.");
     message.channel.send("I promise I'll get smarter  soon and have better comebacks. This is the only thing I can think of currently.");
-  }*/
+  }
 });
 
 
