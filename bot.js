@@ -10,7 +10,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
-function roll(message, rollString){
+/*function roll(message, rollString){
     var output = "";
     var tempRoll = 0;
     var totalRoll = 0;
@@ -44,7 +44,7 @@ function roll(message, rollString){
     
     message.channel.send("You rolled : " + output + " which is equal to : " + totalRoll);
     
-}
+}*/
 
 /**
  * The ready event is vital, it means that only _after_ this will your bot start reacting to information
