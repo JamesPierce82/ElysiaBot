@@ -89,7 +89,7 @@ client.on('message', message => {
     
     
     // Timer Logic
-    if(message.author.id === '278317411441180672') {
+    /*if(message.author.id === '278317411441180672') {
       if(zakMsg == 0){
 		zakMsg = message.createdTimestamp;
 	} else{
@@ -112,11 +112,11 @@ client.on('message', message => {
 			message.channel.send("Ugh, This guy? I'm Leaving...");
 		}
 	}
-  }
+  }*/
     
     
   // If the message is "ping"
-  if (message.content === '!ping') {
+  /*if (message.content === '!ping') {
     // Send "pong" to the same channel
     message.channel.send('pong');
       // Zak Logic
@@ -145,7 +145,7 @@ client.on('message', message => {
   } else if (message.content.toLowerCase().includes("hey robi") && message.content.toLowerCase().includes("weather")){
     message.channel.send("Looks like showers. Boy do I need one.");
     message.channel.send("I promise I'll get smarter  soon and have better comebacks. This is the only thing I can think of currently.");
-  }
+  }*/
 });
 
 
