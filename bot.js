@@ -122,7 +122,7 @@ client.on('message', message => {
     
   // If the message is "ping"
   if(message.content.startsWith(".")){
-     let apiai = apiaiApp.textRequest(message.content.substr(0,message.content.length-1), {
+     let apiai = apiaiApp.textRequest(message.content.substr(1,message.content.length-1), {
          sessionID: 'robi' // arbitrary value
      });
       
