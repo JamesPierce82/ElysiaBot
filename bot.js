@@ -10,6 +10,16 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
+// Import all settings from the conf.js file
+let settings = require('./conf.js');
+
+// Declare variables from the conf.js file
+const token = settings.token;
+const apiToken = settings.apiToken;
+
+const apiaiApp = require("apiai")(apiToken);
+
+
 function roll(message, rollString){
     var output = "";
     var tempRoll = 0;
@@ -62,11 +72,6 @@ client.on('ready', () => {
 
 });
 
-// Import all settings from the conf.js file
-let settings = require('./conf.js');
-
-// Declare variables from the conf.js file
-const token = settings.token;
 
 // declare variables tied to messaging features
 var zakMsg = 0;
@@ -116,17 +121,24 @@ client.on('message', message => {
     
     
   // If the message is "ping"
-  if (message.content === '!ping') {
+  if(message.content.startsWith(".")){
+     let apiai = apiaiApp.textRequest(message.content.substr(0,message.content.length-1), {
+         sessionID: 'robi' // arbitrary value
+     });
+      
+      apiai.on('response', (response) => {
+         message.channel.send("message was received successfully."); 
+         let textResponse = response.result.fulfillment.speech;
+          message.channel.send("message:" + textResponse); 
+      });
+  } else if (message.content === '!ping') {
     // Send "pong" to the same channel
     message.channel.send('pong');
       // Zak Logic
   } else if(message.content.startsWith('!roll')){
         var rollStringArray = message.content.split(" ");
         var rollString = rollStringArray[1];
-      
         roll(message, rollString);
-      
-    
   } else if(message.content === '!dan'){
       message.channel.send("danMsg - " + danMsg);
       message.channel.send("danOldMsg - " + danOldMsg);
@@ -138,7 +150,6 @@ client.on('message', message => {
   } else if(message.content === '!help'){
         message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20\n!request - Type up any feature requests for the bot");
   }else if (message.content.startsWith("!request")){
-      
       var request = message.content.substr(9, (message.content.length)-1);      
       requestsChannel.send("Request: " + request);
       message.channel.send("Your request has been logged. Thank You!");
@@ -151,3 +162,5 @@ client.on('message', message => {
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login(token);
+
+
