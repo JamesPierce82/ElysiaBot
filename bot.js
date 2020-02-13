@@ -69,7 +69,7 @@ client.on('ready', () => {
     
     debugChannel.send("Bot has Connected!");
     
-    var apiai2 = require('apiai');
+    /*var apiai2 = require('apiai');
     var app2 = apiai(apiToken);
     var request = app2.textRequest('hello', {
         sessionId: 'testing'
@@ -80,7 +80,7 @@ client.on('ready', () => {
     request.on('error', function(error){
         debugChannel.send(error);
     });
-    request.end();
+    request.end();*?
 
 });
 
