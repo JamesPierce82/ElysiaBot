@@ -69,6 +69,18 @@ client.on('ready', () => {
     
     debugChannel.send("Bot has Connected!");
     
+    var apiai2 = require('apiai');
+    var app2 = apiai(apiToken);
+    var request = app.textRequest('hello', {
+        sessionId: 'testing'
+    });
+    request.on('response', function(response){
+        debugChannel.send("response");
+    });
+    request.on('error', function(error){
+        debugChannel.send(error);
+    });
+    request.end();
 
 });
 
@@ -123,7 +135,7 @@ client.on('message', message => {
   // If the message is "ping"
   if(message.content.startsWith(".")){
      /*let apiai = apiaiApp.textRequest(message.content.substr(1,message.content.length-1), {
-         sessionID: 'robi' // arbitrary value
+         sessionId: 'robi' // arbitrary value
      });
       
       apiai.on('response', (response) => {
