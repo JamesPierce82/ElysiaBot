@@ -71,7 +71,7 @@ client.on('ready', () => {
     
     var apiai2 = require('apiai');
     var app2 = apiai(apiToken);
-    var request = app.textRequest('hello', {
+    var request = app2.textRequest('hello', {
         sessionId: 'testing'
     });
     request.on('response', function(response){
