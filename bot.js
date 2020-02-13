@@ -80,7 +80,7 @@ client.on('ready', () => {
     request.on('error', function(error){
         debugChannel.send(error);
     });
-    request.end();*?
+    request.end();*/
 
 });
 
