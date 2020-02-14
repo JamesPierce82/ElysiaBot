@@ -134,13 +134,14 @@ client.on('message', message => {
     
   // If the message is "ping"
   if(message.content.startsWith(".")){
-     
+     var msg = message.content;
       var request = apiaiApp.textRequest('hello', {
         sessionId: 'testID'
     });
 
     request.on('response', function(response){
-        console.log(response.result.fulfillment.speech);
+        //console.log(response.result.fulfillment.speech);
+        message.channel.send("you said: " + msg);
         message.channel.send(response.result.fulfillment.speech);
     });
 
