@@ -135,6 +135,7 @@ client.on('message', message => {
   // If the message is "ping"
   if(message.content.startsWith(".")){
      var msg = message.content;
+      var strippedMsg = msg.substr(1, (msg.length-1));
       var request = apiaiApp.textRequest('hello', {
         sessionId: 'testID'
     });
@@ -142,6 +143,7 @@ client.on('message', message => {
     request.on('response', function(response){
         //console.log(response.result.fulfillment.speech);
         message.channel.send("you said: " + msg);
+        message.channel.send("your stripped message: " + strippedMsg);
         message.channel.send(response.result.fulfillment.speech);
     });
 
