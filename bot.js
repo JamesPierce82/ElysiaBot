@@ -136,7 +136,7 @@ client.on('message', message => {
   if(message.content.startsWith(".")){
      var msg = message.content;
       var strippedMsg = msg.substr(1, (msg.length-1));
-      var request = apiaiApp.textRequest('hello', {
+      var request = apiaiApp.textRequest(strippedMsg, {
         sessionId: 'testID'
     });
 
