@@ -141,9 +141,10 @@ client.on('message', message => {
     });
 
     request.on('response', function(response){
+        // DEBUG
         //console.log(response.result.fulfillment.speech);
-        message.channel.send("you said: " + msg);
-        message.channel.send("your stripped message: " + strippedMsg);
+        //message.channel.send("you said: " + msg);
+        //message.channel.send("your stripped message: " + strippedMsg);
         message.channel.send(response.result.fulfillment.speech);
     });
 
