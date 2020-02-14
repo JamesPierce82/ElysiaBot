@@ -13,7 +13,7 @@ var request = app.textRequest('hello', {
 });
 
 request.on('response', function(response){
-    console.log(response);
+    console.log(response.result.fulfillment.speech);
 });
 
 request.on('error', function(error){
