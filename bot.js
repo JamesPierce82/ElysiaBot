@@ -139,8 +139,8 @@ client.on('message', message => {
      });
       
       apiai.on('response', (response) => {
-         /*message.channel.send("message was received successfully."); 
-         let textResponse = response.result.fulfillment.speech;
+         message.channel.send("message was received successfully."); 
+         /*let textResponse = response.result.fulfillment.speech;
           message.channel.send("message:" + textResponse); */
       });
       message.channel.send("apiAI has been created without error, response code is started.");
