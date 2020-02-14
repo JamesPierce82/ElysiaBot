@@ -134,11 +134,11 @@ client.on('message', message => {
     
   // If the message is "ping"
   if(message.content.startsWith(".")){
-     /*let apiai = apiaiApp.textRequest(message.content.substr(1,message.content.length-1), {
+     let apiai = apiaiApp.textRequest(message.content.substr(1,message.content.length-1), {
          sessionId: 'robi' // arbitrary value
      });
-      
-      apiai.on('response', (response) => {
+      message.channel.send("apiAI has been created without error.");
+      /*apiai.on('response', (response) => {
          message.channel.send("message was received successfully."); 
          let textResponse = response.result.fulfillment.speech;
           message.channel.send("message:" + textResponse); 
