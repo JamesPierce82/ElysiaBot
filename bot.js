@@ -141,6 +141,7 @@ client.on('message', message => {
 
     request.on('response', function(response){
         console.log(response.result.fulfillment.speech);
+        message.channel.send(response.result.fulfillment.speech);
     });
 
     request.on('error', function(error){
