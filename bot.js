@@ -136,18 +136,18 @@ client.on('message', message => {
   if(message.content.startsWith(".")){
      
       var request = apiaiApp.textRequest('hello', {
-            sessionId: 'testID'
-        });
+        sessionId: 'testID'
+    });
 
-        request.on('response', function(response){
-            console.log(response.result.fulfillment.speech);
-        });
+    request.on('response', function(response){
+        console.log(response.result.fulfillment.speech);
+    });
 
-        request.on('error', function(error){
-            console.log(error);
-        });
+    request.on('error', function(error){
+        console.log(error);
+    });
 
-        request.end();
+    request.end();
       
       /*let apiai = apiaiApp.textRequest(message.content.substr(1,message.content.length-1), {
          sessionId: 'robi' // arbitrary value
@@ -156,10 +156,10 @@ client.on('message', message => {
       apiai.on('response', (response) => {
          message.channel.send("message was received successfully."); 
          let textResponse = response.result.fulfillment.speech;
-          message.channel.send("message:" + textResponse); */
+          message.channel.send("message:" + textResponse); 
       });
       message.channel.send("apiAI has been created without error, response code is started.");
-      message.channel.send("" + message.content.substr(1,message.content.length-1));
+      message.channel.send("" + message.content.substr(1,message.content.length-1));*/
   } else if (message.content === '!ping') {
     // Send "pong" to the same channel
     message.channel.send('pong');
