@@ -137,12 +137,13 @@ client.on('message', message => {
      let apiai = apiaiApp.textRequest(message.content.substr(1,message.content.length-1), {
          sessionId: 'robi' // arbitrary value
      });
-      message.channel.send("apiAI has been created without error.");
-      /*apiai.on('response', (response) => {
-         message.channel.send("message was received successfully."); 
+      
+      apiai.on('response', (response) => {
+         /*message.channel.send("message was received successfully."); 
          let textResponse = response.result.fulfillment.speech;
-          message.channel.send("message:" + textResponse); 
-      });*/
+          message.channel.send("message:" + textResponse); */
+      });
+      message.channel.send("apiAI has been created without error, response code is started.");
       message.channel.send("" + message.content.substr(1,message.content.length-1));
   } else if (message.content === '!ping') {
     // Send "pong" to the same channel
