@@ -89,7 +89,7 @@ client.on('message', message => {
     
     
     // Timer Logic
-    if(message.author.id === '278317411441180672') {
+    /*if(message.author.id === '278317411441180672') {
       if(zakMsg == 0){
 		zakMsg = message.createdTimestamp;
 	} else{
@@ -112,7 +112,7 @@ client.on('message', message => {
 			message.channel.send("Ugh, This guy? I'm Leaving...");
 		}
 	}
-  }
+  }*/ß
     
     
   // If the message is "ping"
