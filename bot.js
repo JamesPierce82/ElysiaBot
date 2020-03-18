@@ -146,6 +146,39 @@ client.on('message', message => {
     message.channel.send("Looks like showers. Boy do I need one.");
     message.channel.send("I promise I'll get smarter soon and have better comebacks. This is the only thing I can think of currently.");
   }
+    
+    
+  // If the message is "ping"
+  if (message.content === '!ping') {
+    // Send "pong" to the same channel
+    message.channel.send('pong');
+      // Zak Logic
+  } else if(message.content.startsWith('!roll')){
+        var rollStringArray = message.content.split(" ");
+        var rollString = rollStringArray[1];
+      
+        roll(message, rollString);
+      
+    
+  } else if(message.content === '!dan'){
+      message.channel.send("danMsg - " + danMsg);
+      message.channel.send("danOldMsg - " + danOldMsg);
+      message.channel.send("danTimeout - " + danTimeout);
+  } else if(message.content === '!zak'){
+      message.channel.send("zakMsg - " + zakMsg);
+      message.channel.send("zakOldMsg - " + zakOldMsg);
+      message.channel.send("zakTimeout - " + zakTimeout);
+  } else if(message.content === '!help'){
+        message.channel.send("Command List\n\n!help - Lists all commands\n!roll - Rolls Dice using the following notation: 3d6+4d20\n!request - Type up any feature requests for the bot");
+  }else if (message.content.startsWith("!request")){
+      
+      var request = message.content.substr(9, (message.content.length)-1);      
+      requestsChannel.send("Request: " + request);
+      message.channel.send("Your request has been logged. Thank You!");
+  } else if (message.content.toLowerCase().includes("hey robi") && message.content.toLowerCase().includes("weather")){
+    message.channel.send("Looks like showers. Boy do I need one.");
+    message.channel.send("I promise I'll get smarter  soon and have better comebacks. This is the only thing I can think of currently.");
+  }
 });
 
 
