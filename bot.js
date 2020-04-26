@@ -105,7 +105,7 @@ client.on('message', message => {
         .find(x => x.name === 'bot-requests');
     
     
-    // Timer Logic
+    /*// Timer Logic
     if(message.author.id === '278317411441180672') {
       if(zakMsg == 0){
 		zakMsg = message.createdTimestamp;
@@ -129,7 +129,7 @@ client.on('message', message => {
 			message.channel.send("Ugh, This guy? I'm Leaving...");
 		}
 	}
-  }
+  }*/
     
     
   // If the message is "ping"
