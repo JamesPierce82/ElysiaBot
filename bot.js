@@ -112,7 +112,7 @@ client.on('message', message => {
 			message.channel.send("Ugh, This guy? I'm Leaving...");
 		}
 	}
-  }*/ß
+  }*/
     
     
   // If the message is "ping"
